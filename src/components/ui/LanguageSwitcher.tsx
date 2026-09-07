@@ -68,7 +68,7 @@ export function LanguageSwitcher() {
                     (locale === item.code ? 'text-accent' : 'text-ink hover:bg-surface')
                   }
                 >
-                  <span className="h-3.5 w-5 shrink-0 overflow-hidden border border-line/50">
+                  <span className="h-[18px] w-6 shrink-0 overflow-hidden border border-line/50">
                     <Flag code={item.code} />
                   </span>
                   <span>{item.nativeName}</span>

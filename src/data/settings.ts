@@ -17,8 +17,8 @@ export const RESUME_DOWNLOAD_NAME = 'James-Dean-Resume.pdf'
 
 /** Social profile URLs — replace placeholders with real profiles. */
 export const SOCIAL_LINKS: SocialLink[] = [
-  { platform: 'Instagram', url: 'https://instagram.com/REPLACE-WITH-JSYNC' },
-  { platform: 'Facebook', url: 'https://facebook.com/REPLACE-WITH-JSYNC' },
-  { platform: 'GitHub', url: 'https://github.com/REPLACE-WITH-JSYNC' },
-  { platform: 'LinkedIn', url: 'https://linkedin.com/company/REPLACE-WITH-JSYNC' },
+  { platform: 'Instagram', url: 'https://www.instagram.com/iamjamesdean01/' },
+  { platform: 'Facebook', url: 'https://www.facebook.com/James.Dean220/' },
+  { platform: 'GitHub', url: 'https://github.com/p00rmanS' },
+  { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/jamesdean2020/' },
 ]
