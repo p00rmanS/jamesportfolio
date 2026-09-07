@@ -134,3 +134,18 @@ body {
 .tnum {
   font-variant-numeric: tabular-nums;
 }
+
+/* Swap pre-colored badge assets (e.g. social icons) by theme, same .light
+   root class as every other themed color — no React state, no re-render. */
+.theme-icon-dark {
+  display: block;
+}
+.theme-icon-light {
+  display: none;
+}
+:root.light .theme-icon-dark {
+  display: none;
+}
+:root.light .theme-icon-light {
+  display: block;
+}
