@@ -121,13 +121,13 @@ export const content: SiteContent = {
 
   videos: [
     {
-      id: 'video-featured-reel',
-      title: 'Showreel — [Add Title]',
-      client: 'J Sync',
-      category: 'Reel',
-      description: '[Add description — a short cut of recent video work across clients.]',
-      source: { type: 'local', src: '' }, // e.g. /videos/showreel.mp4
-      thumbnail: '',
+      id: 'video-pcc-welcome',
+      title: 'Welcome Video',
+      client: 'Polynesian Cultural Center — Dining Services',
+      category: 'Video Production',
+      description: 'A welcome and orientation video produced during an internship with the Polynesian Cultural Center’s Dining Services team.',
+      source: { type: 'youtube', src: 'DvTab39bnpM' },
+      thumbnail: 'https://img.youtube.com/vi/DvTab39bnpM/maxresdefault.jpg',
       featured: true,
     },
     {
