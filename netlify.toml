@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Client-side routing (React Router) — every path serves index.html so
+# direct loads of /work/:id, /dashboard, etc. don't 404 on the CDN.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

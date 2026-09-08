@@ -22,3 +22,12 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { platform: 'GitHub', url: 'https://github.com/p00rmanS' },
   { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/jamesdean2020/' },
 ]
+
+/**
+ * Cloudflare Web Analytics token — free, privacy-friendly, no cookie banner
+ * needed. Leave empty to keep analytics off entirely (default; nothing is
+ * loaded). To enable: sign up free at https://dash.cloudflare.com (Analytics
+ * & Logs > Web Analytics > Add a site — no DNS/nameserver change required,
+ * it just needs the site's URL), then paste the token it gives you here.
+ */
+export const CLOUDFLARE_ANALYTICS_TOKEN = ''
