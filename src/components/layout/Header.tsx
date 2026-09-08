@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, Search, X } from 'lucide-react'
 import { content } from '@/data/content'
 import { RESUME_URL, RESUME_DOWNLOAD_NAME } from '@/data/settings'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { useI18n } from '@/i18n/I18nContext'
 import type { Translations } from '@/i18n/types'
+import { useCommandPalette } from '@/context/CommandPaletteContext'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 import { Logo } from '@/components/ui/Logo'
@@ -16,6 +17,7 @@ const SECTION_IDS = content.nav.map((link) => link.href.replace('#', ''))
 
 export function Header() {
   const { t } = useI18n()
+  const { open: openCommandPalette } = useCommandPalette()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const activeId = useActiveSection(SECTION_IDS)
@@ -93,6 +95,15 @@ export function Header() {
           >
             {t.nav.resume}
           </a>
+          <button
+            type="button"
+            onClick={openCommandPalette}
+            aria-label={t.commandPalette.placeholder}
+            title={t.commandPalette.placeholder}
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-accent hover:text-ink"
+          >
+            <Search className="h-3.5 w-3.5" aria-hidden="true" />
+          </button>
           <LanguageSwitcher />
           <ThemeToggle />
           <a
@@ -105,6 +116,14 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-3 lg:hidden">
+          <button
+            type="button"
+            onClick={openCommandPalette}
+            aria-label={t.commandPalette.placeholder}
+            className="flex h-9 w-9 items-center justify-center text-ink"
+          >
+            <Search className="h-4 w-4" aria-hidden="true" />
+          </button>
           <LanguageSwitcher />
           <ThemeToggle />
           <button

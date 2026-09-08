@@ -51,6 +51,11 @@ export const es: Translations = {
       label: 'Acerca de',
       title: 'Detrás de {brand}.',
     },
+    faq: {
+      label: 'Preguntas Frecuentes',
+      title: 'Antes de reservar.',
+      description: 'Las preguntas que suelen surgir antes de la primera llamada.',
+    },
     booking: {
       label: 'Reservas',
       title: 'Construyamos algo útil.',
@@ -131,5 +136,40 @@ export const es: Translations = {
     toolsIWorkWith: 'Herramientas que uso',
     fullSite: 'Ver sitio completo',
     altViewLabel: 'Vista de panel',
+  },
+  faq: {
+    items: [
+      {
+        question: '¿Cuánto dura un proyecto típico?',
+        answer:
+          'Depende del alcance, pero la mayoría de los proyectos de video y web toman de una a tres semanas, desde el inicio hasta la entrega. Los desarrollos de automatización suelen ser más rápidos, a menudo listos en una semana.',
+      },
+      {
+        question: '¿Cómo funcionan los precios?',
+        answer:
+          'Cada proyecto recibe una cotización según su alcance después de la llamada de descubrimiento, así que nada se cotiza a ciegas. El trabajo puntual suele ser de tarifa fija; los sistemas de contenido o automatización continuos suelen ser una suscripción mensual.',
+      },
+      {
+        question: '¿Qué pasa si necesito cambios después de la entrega?',
+        answer:
+          'Cada proyecto incluye una ronda de revisiones antes de la entrega final. El soporte o las actualizaciones posteriores están disponibles bajo solicitud.',
+      },
+      {
+        question: '¿Necesito saber exactamente qué quiero antes de agendar una llamada?',
+        answer:
+          'No — la llamada de descubrimiento existe justamente para definirlo juntos. Ven con el problema que quieres resolver, no necesariamente con la solución.',
+      },
+      {
+        question: '¿Se pueden combinar estos servicios?',
+        answer:
+          'Sí — el video, el contenido, la web y la automatización están pensados para conectarse entre sí. Muchos clientes comienzan con un servicio y agregan otro una vez que el primero está funcionando.',
+      },
+    ],
+  },
+  commandPalette: {
+    placeholder: 'Buscar secciones y acciones…',
+    noResults: 'No se encontraron resultados.',
+    sectionsGroup: 'Secciones',
+    actionsGroup: 'Acciones',
   },
 }

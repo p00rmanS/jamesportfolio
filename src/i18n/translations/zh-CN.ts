@@ -51,6 +51,11 @@ export const zhCN: Translations = {
       label: '关于',
       title: '关于 {brand}。',
     },
+    faq: {
+      label: '常见问题',
+      title: '预约之前。',
+      description: '首次通话前，客户通常会问到的问题。',
+    },
     booking: {
       label: '预约',
       title: '一起打造真正有用的东西。',
@@ -131,5 +136,37 @@ export const zhCN: Translations = {
     toolsIWorkWith: '我使用的工具',
     fullSite: '查看完整网站',
     altViewLabel: '仪表盘视图',
+  },
+  faq: {
+    items: [
+      {
+        question: '一般项目需要多长时间？',
+        answer:
+          '具体取决于项目规模，但大多数视频和网站项目从启动到交付通常需要一到三周。自动化系统的搭建通常更快，往往一周内即可上线。',
+      },
+      {
+        question: '费用是如何计算的？',
+        answer:
+          '每个项目都会在初步沟通后根据实际范围给出报价，绝不盲目定价。单次项目通常按固定价格收费；持续性的内容或自动化系统通常按月订阅收费。',
+      },
+      {
+        question: '交付后如果需要修改怎么办？',
+        answer: '每个项目在最终交付前都包含一轮修改。之后的支持或更新可按需另行安排。',
+      },
+      {
+        question: '预约通话前是否需要明确知道自己想要什么？',
+        answer: '不需要 — 初步沟通的目的正是为了一起理清需求。只需带着您想解决的问题来就好，不必事先想好解决方案。',
+      },
+      {
+        question: '这些服务可以组合使用吗？',
+        answer: '可以 — 视频、内容、网站与自动化在设计上本就是相互衔接的。许多客户会先从一项服务开始，等运作顺利后再增加其他服务。',
+      },
+    ],
+  },
+  commandPalette: {
+    placeholder: '搜索版块与操作…',
+    noResults: '未找到匹配结果。',
+    sectionsGroup: '版块',
+    actionsGroup: '操作',
   },
 }

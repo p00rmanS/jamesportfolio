@@ -24,6 +24,7 @@ export interface Translations {
     services: { label: string; title: string; description: string }
     process: { label: string; title: string; description: string }
     about: { label: string; title: string }
+    faq: { label: string; title: string; description: string }
     booking: { label: string; title: string }
   }
   services: {
@@ -85,5 +86,14 @@ export interface Translations {
     toolsIWorkWith: string
     fullSite: string
     altViewLabel: string
+  }
+  faq: {
+    items: Array<{ question: string; answer: string }>
+  }
+  commandPalette: {
+    placeholder: string
+    noResults: string
+    sectionsGroup: string
+    actionsGroup: string
   }
 }

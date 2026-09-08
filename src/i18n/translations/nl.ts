@@ -51,6 +51,11 @@ export const nl: Translations = {
       label: 'Over ons',
       title: 'Achter {brand}.',
     },
+    faq: {
+      label: 'Veelgestelde vragen',
+      title: 'Voordat je boekt.',
+      description: 'De vragen die meestal opkomen vóór een eerste gesprek.',
+    },
     booking: {
       label: 'Afspraak',
       title: 'Laten we iets nuttigs bouwen.',
@@ -131,5 +136,39 @@ export const nl: Translations = {
     toolsIWorkWith: 'Tools die ik gebruik',
     fullSite: 'Bekijk volledige site',
     altViewLabel: 'Dashboardweergave',
+  },
+  faq: {
+    items: [
+      {
+        question: 'Hoe lang duurt een gemiddeld project?',
+        answer:
+          'Dat hangt af van de omvang, maar de meeste video- en webprojecten duren één tot drie weken van start tot oplevering. Automatiseringen zijn meestal sneller, vaak binnen een week live.',
+      },
+      {
+        question: 'Hoe werkt de prijsstelling?',
+        answer:
+          'Elk project krijgt na het kennismakingsgesprek een offerte op maat, dus niets wordt blind geprijsd. Losse opdrachten zijn meestal een vast tarief; doorlopende content- of automatiseringssystemen zijn meestal een maandelijks abonnement.',
+      },
+      {
+        question: 'Wat als ik na oplevering nog wijzigingen nodig heb?',
+        answer:
+          'Elk project bevat een ronde revisies vóór de definitieve oplevering. Ondersteuning of updates daarna zijn op aanvraag mogelijk.',
+      },
+      {
+        question: 'Moet ik precies weten wat ik wil voordat ik een gesprek boek?',
+        answer: 'Nee — daar is het kennismakingsgesprek juist voor. Kom met het probleem, niet per se met de oplossing.',
+      },
+      {
+        question: 'Kunnen deze diensten gecombineerd worden?',
+        answer:
+          'Ja — video, content, web en automatisering zijn ontworpen om op elkaar aan te sluiten. Veel klanten beginnen met één dienst en voegen er later nog een toe.',
+      },
+    ],
+  },
+  commandPalette: {
+    placeholder: 'Zoek secties en acties…',
+    noResults: 'Geen resultaten gevonden.',
+    sectionsGroup: 'Secties',
+    actionsGroup: 'Acties',
   },
 }

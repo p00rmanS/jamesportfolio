@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ExternalLink, X } from 'lucide-react'
 import { MediaFrame } from '@/components/ui/MediaFrame'
 import { Button } from '@/components/ui/Button'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
@@ -81,6 +82,14 @@ export function ProjectModal({ project, onClose, onPrev, onNext }: ProjectModalP
                 </h2>
                 <p className="mt-2 font-sans text-sm text-muted">{project.client}</p>
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">{project.description}</p>
+                <Link
+                  to={`/work/${project.id}`}
+                  onClick={onClose}
+                  className="mt-4 inline-flex items-center gap-1.5 font-sans text-sm text-muted transition-colors hover:text-accent"
+                >
+                  View full case study
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
 
                 <dl className="mt-8 grid grid-cols-2 gap-6 border-t border-line pt-6">
                   <div>

@@ -51,6 +51,11 @@ export const vi: Translations = {
       label: 'Giới Thiệu',
       title: 'Đằng sau {brand}.',
     },
+    faq: {
+      label: 'Câu Hỏi Thường Gặp',
+      title: 'Trước khi đặt lịch.',
+      description: 'Những câu hỏi thường gặp trước cuộc gọi đầu tiên.',
+    },
     booking: {
       label: 'Đặt Lịch',
       title: 'Cùng nhau xây dựng điều gì đó hữu ích.',
@@ -131,5 +136,40 @@ export const vi: Translations = {
     toolsIWorkWith: 'Công cụ tôi sử dụng',
     fullSite: 'Xem trang đầy đủ',
     altViewLabel: 'Chế độ xem Dashboard',
+  },
+  faq: {
+    items: [
+      {
+        question: 'Một dự án thông thường mất bao lâu?',
+        answer:
+          'Tùy vào phạm vi công việc, nhưng hầu hết các dự án video và web kéo dài từ một đến ba tuần, từ lúc bắt đầu đến khi bàn giao. Các dự án tự động hóa thường nhanh hơn, đôi khi chỉ mất một tuần để vận hành.',
+      },
+      {
+        question: 'Chi phí được tính như thế nào?',
+        answer:
+          'Mỗi dự án sẽ nhận báo giá phù hợp với phạm vi công việc sau cuộc gọi tìm hiểu ban đầu, không có mức giá áp đặt sẵn. Công việc đơn lẻ thường tính theo giá cố định; các hệ thống nội dung hoặc tự động hóa lâu dài thường theo hình thức trả phí hàng tháng.',
+      },
+      {
+        question: 'Nếu tôi cần chỉnh sửa sau khi bàn giao thì sao?',
+        answer:
+          'Mỗi dự án đều bao gồm một vòng chỉnh sửa trước khi bàn giao cuối cùng. Hỗ trợ hoặc cập nhật sau đó có thể thực hiện theo yêu cầu.',
+      },
+      {
+        question: 'Tôi có cần biết chính xác mình muốn gì trước khi đặt lịch gọi không?',
+        answer:
+          'Không — cuộc gọi tìm hiểu ban đầu chính là để cùng nhau xác định điều đó. Bạn chỉ cần mang theo vấn đề cần giải quyết, chưa cần có sẵn giải pháp.',
+      },
+      {
+        question: 'Các dịch vụ này có thể kết hợp với nhau không?',
+        answer:
+          'Có — video, nội dung, web và tự động hóa được thiết kế để kết nối với nhau. Nhiều khách hàng bắt đầu với một dịch vụ rồi bổ sung thêm dịch vụ khác khi dịch vụ đầu tiên đã vận hành ổn định.',
+      },
+    ],
+  },
+  commandPalette: {
+    placeholder: 'Tìm kiếm mục và thao tác…',
+    noResults: 'Không tìm thấy kết quả phù hợp.',
+    sectionsGroup: 'Mục',
+    actionsGroup: 'Thao tác',
   },
 }

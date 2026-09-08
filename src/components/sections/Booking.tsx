@@ -77,7 +77,7 @@ export function Booking() {
   return (
     <section id="booking" ref={ref} className="mx-auto max-w-xl px-6 py-12 lg:py-20 lg:px-12">
       <Reveal>
-        <SectionHeading index="09" label={t.sections.booking.label} title={t.sections.booking.title} align="center" />
+        <SectionHeading index="10" label={t.sections.booking.label} title={t.sections.booking.title} align="center" />
         <p className="mx-auto mt-6 max-w-md text-center text-sm leading-relaxed text-muted">{t.booking.description}</p>
       </Reveal>
 

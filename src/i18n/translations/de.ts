@@ -51,6 +51,11 @@ export const de: Translations = {
       label: 'Über uns',
       title: 'Hinter {brand}.',
     },
+    faq: {
+      label: 'FAQ',
+      title: 'Bevor Sie buchen.',
+      description: 'Die Fragen, die vor einem ersten Gespräch meist aufkommen.',
+    },
     booking: {
       label: 'Terminbuchung',
       title: 'Lass uns etwas Nützliches bauen.',
@@ -131,5 +136,39 @@ export const de: Translations = {
     toolsIWorkWith: 'Tools, die ich nutze',
     fullSite: 'Ganze Seite ansehen',
     altViewLabel: 'Dashboard-Ansicht',
+  },
+  faq: {
+    items: [
+      {
+        question: 'Wie lange dauert ein typisches Projekt?',
+        answer:
+          'Das hängt vom Umfang ab, aber die meisten Video- und Webprojekte dauern ein bis drei Wochen vom Start bis zur Lieferung. Automatisierungen sind meist schneller, oft innerhalb einer Woche live.',
+      },
+      {
+        question: 'Wie funktioniert die Preisgestaltung?',
+        answer:
+          'Jedes Projekt erhält nach dem Erstgespräch ein Angebot passend zum Umfang — nichts wird blind kalkuliert. Einzelprojekte sind meist zum Festpreis; laufende Content- oder Automatisierungssysteme laufen in der Regel als monatliches Abo.',
+      },
+      {
+        question: 'Was, wenn ich nach der Lieferung Änderungen brauche?',
+        answer:
+          'Jedes Projekt beinhaltet eine Korrekturrunde vor der finalen Lieferung. Support oder Updates danach sind auf Anfrage möglich.',
+      },
+      {
+        question: 'Muss ich vor dem Gespräch genau wissen, was ich will?',
+        answer: 'Nein — genau dafür ist das Erstgespräch da. Kommen Sie mit dem Problem, nicht zwingend mit der Lösung.',
+      },
+      {
+        question: 'Lassen sich die Leistungen kombinieren?',
+        answer:
+          'Ja — Video, Content, Web und Automatisierung sind so gedacht, dass sie zusammenspielen. Viele Kund:innen starten mit einer Leistung und ergänzen später eine weitere.',
+      },
+    ],
+  },
+  commandPalette: {
+    placeholder: 'Bereiche und Aktionen durchsuchen…',
+    noResults: 'Keine Treffer gefunden.',
+    sectionsGroup: 'Bereiche',
+    actionsGroup: 'Aktionen',
   },
 }

@@ -54,6 +54,11 @@ export const zhHK: Translations = {
       label: '關於',
       title: '關於 {brand}。',
     },
+    faq: {
+      label: '常見問題',
+      title: '預約之前。',
+      description: '第一次傾偈之前，通常會問到嘅問題。',
+    },
     booking: {
       label: '預約',
       title: '一齊打造啲真正有用嘅嘢。',
@@ -134,5 +139,37 @@ export const zhHK: Translations = {
     toolsIWorkWith: '我用嘅工具',
     fullSite: '睇完整網站',
     altViewLabel: '儀表板檢視',
+  },
+  faq: {
+    items: [
+      {
+        question: '一個普通項目要幾耐？',
+        answer:
+          '要睇項目規模，不過大部分影片同網站項目由開始到交付，通常要一至三個星期。自動化嘅搭建通常會快啲，好多時一個星期內就可以上線。',
+      },
+      {
+        question: '收費係點計嘅？',
+        answer:
+          '每個項目都會喺初步傾偈之後，根據實際範圍俾返報價，絕對唔會盲目定價。單次項目通常係固定價錢；持續性嘅內容或者自動化系統就通常係月費形式。',
+      },
+      {
+        question: '交咗之後仲要改點算？',
+        answer: '每個項目喺最終交付之前，都包括一輪修改。之後嘅支援或者更新，可以按需要再另外安排。',
+      },
+      {
+        question: '約傾偈之前，係咪要清楚知道自己想要咩？',
+        answer: '唔使 — 初步傾偈嘅目的，就係一齊搞清楚呢樣嘢。只要帶住你想解決嘅問題嚟就得，唔使預先諗好解決方案。',
+      },
+      {
+        question: '呢啲服務可唔可以夾埋一齊用？',
+        answer: '可以 — 影片、內容、網站同自動化，設計上就係為咗互相配合。好多客戶都會先由一項服務開始，等運作暢順之後先至加多一項。',
+      },
+    ],
+  },
+  commandPalette: {
+    placeholder: '搜尋版面同操作…',
+    noResults: '搵唔到相關結果。',
+    sectionsGroup: '版面',
+    actionsGroup: '操作',
   },
 }

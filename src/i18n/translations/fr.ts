@@ -51,6 +51,11 @@ export const fr: Translations = {
       label: 'À propos',
       title: 'Derrière {brand}.',
     },
+    faq: {
+      label: 'FAQ',
+      title: 'Avant de réserver.',
+      description: 'Les questions qui reviennent le plus souvent avant un premier appel.',
+    },
     booking: {
       label: 'Réservation',
       title: 'Construisons quelque chose d’utile.',
@@ -131,5 +136,40 @@ export const fr: Translations = {
     toolsIWorkWith: 'Outils que j’utilise',
     fullSite: 'Voir le site complet',
     altViewLabel: 'Vue tableau de bord',
+  },
+  faq: {
+    items: [
+      {
+        question: 'Combien de temps dure un projet type ?',
+        answer:
+          'Cela dépend de l’ampleur, mais la plupart des projets vidéo et web durent une à trois semaines, du lancement à la livraison. Les automatisations sont généralement plus rapides, souvent en ligne en une semaine.',
+      },
+      {
+        question: 'Comment fonctionnent les tarifs ?',
+        answer:
+          'Chaque projet reçoit un devis basé sur son périmètre après l’appel découverte — rien n’est chiffré à l’aveugle. Les missions ponctuelles sont souvent au forfait ; les systèmes de contenu ou d’automatisation continus sont généralement un abonnement mensuel.',
+      },
+      {
+        question: 'Que se passe-t-il si j’ai besoin de modifications après la livraison ?',
+        answer:
+          'Un tour de révisions est inclus avant la livraison finale de chaque projet. Le support ou les mises à jour ultérieures sont disponibles sur demande.',
+      },
+      {
+        question: 'Dois-je savoir exactement ce que je veux avant de réserver un appel ?',
+        answer:
+          'Non — l’appel découverte sert justement à le déterminer ensemble. Venez avec le problème à résoudre, pas forcément la solution.',
+      },
+      {
+        question: 'Ces services peuvent-ils être combinés ?',
+        answer:
+          'Oui — vidéo, contenu, web et automatisation sont pensés pour se compléter. Beaucoup de clients commencent par un service puis en ajoutent un autre une fois le premier en place.',
+      },
+    ],
+  },
+  commandPalette: {
+    placeholder: 'Rechercher des sections et des actions…',
+    noResults: 'Aucun résultat trouvé.',
+    sectionsGroup: 'Sections',
+    actionsGroup: 'Actions',
   },
 }

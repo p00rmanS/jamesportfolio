@@ -56,6 +56,11 @@ export const en: Translations = {
       label: 'About',
       title: 'Behind {brand}.',
     },
+    faq: {
+      label: 'FAQ',
+      title: 'Before you book.',
+      description: 'The questions that usually come up before a first call.',
+    },
     booking: {
       label: 'Booking',
       title: 'Let’s build something useful.',
@@ -148,5 +153,40 @@ export const en: Translations = {
     toolsIWorkWith: 'Tools I Work With',
     fullSite: 'View Full Site',
     altViewLabel: 'Dashboard View',
+  },
+  faq: {
+    items: [
+      {
+        question: 'How long does a typical project take?',
+        answer:
+          'It depends on scope, but most video and web projects run one to three weeks from kickoff to delivery. Automation builds are usually faster — often live within a week.',
+      },
+      {
+        question: 'How does pricing work?',
+        answer:
+          'Every project gets a scoped quote after the discovery call, so nothing is priced blind. One-off work is typically flat-rate; ongoing content or automation systems are usually a monthly retainer.',
+      },
+      {
+        question: 'What if I need changes after delivery?',
+        answer:
+          'A round of revisions is included before final delivery on every project. Ongoing support or updates after that are available on request.',
+      },
+      {
+        question: 'Do I need to know exactly what I want before booking a call?',
+        answer:
+          'No — the discovery call exists to figure that out together. Come with the problem you’re trying to solve, not necessarily the solution.',
+      },
+      {
+        question: 'Can these services be combined?',
+        answer:
+          'Yes — video, content, web, and automation work are designed to connect. Many clients start with one service and add another once the first is running.',
+      },
+    ],
+  },
+  commandPalette: {
+    placeholder: 'Search sections and actions…',
+    noResults: 'No matches found.',
+    sectionsGroup: 'Sections',
+    actionsGroup: 'Actions',
   },
 }
