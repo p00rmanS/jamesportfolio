@@ -3,17 +3,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
 import { MediaFrame } from '@/components/ui/MediaFrame'
 import { useFocusTrap } from '@/hooks/useFocusTrap'
+import { ASPECT_BY_ORIENTATION } from '@/utils/contentAspect'
 import type { ContentPiece } from '@/types/content'
 
 interface ContentLightboxProps {
   item: ContentPiece | null
   onClose: () => void
-}
-
-const aspectByOrientation: Record<ContentPiece['orientation'], string> = {
-  portrait: 'aspect-[4/5]',
-  landscape: 'aspect-video',
-  square: 'aspect-square',
 }
 
 export function ContentLightbox({ item, onClose }: ContentLightboxProps) {
@@ -56,7 +51,7 @@ export function ContentLightbox({ item, onClose }: ContentLightboxProps) {
               src={item.media.src}
               alt={item.media.alt}
               label={`${item.category} — Add media`}
-              aspectClassName={aspectByOrientation[item.orientation]}
+              aspectClassName={ASPECT_BY_ORIENTATION[item.orientation]}
               priority
             />
             <div className="p-6 sm:p-8">

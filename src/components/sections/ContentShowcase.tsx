@@ -7,14 +7,9 @@ import { Reveal } from '@/components/ui/Reveal'
 import { ContentLightbox } from '@/components/sections/ContentLightbox'
 import type { ContentCategory, ContentPiece } from '@/types/content'
 import { cn } from '@/utils/cn'
+import { ASPECT_BY_ORIENTATION } from '@/utils/contentAspect'
 
 const FILTERS: Array<ContentCategory | 'All'> = ['All', 'Social', 'Campaigns', 'Design', 'Behind the Scenes']
-
-const aspectByOrientation: Record<ContentPiece['orientation'], string> = {
-  portrait: 'aspect-[4/5]',
-  landscape: 'aspect-video',
-  square: 'aspect-square',
-}
 
 export function ContentShowcase() {
   const { contentGallery } = content
@@ -66,7 +61,7 @@ export function ContentShowcase() {
                       src={item.media.src}
                       alt={item.media.alt}
                       label={`${item.category} — Add media`}
-                      aspectClassName={aspectByOrientation[item.orientation]}
+                      aspectClassName={ASPECT_BY_ORIENTATION[item.orientation]}
                     />
                   </div>
                 </div>

@@ -1,16 +1,18 @@
 # J Sync — Portfolio & Services Website
 
-A production-ready marketing site for J Sync (video production, content creation,
-websites, and workflow automation), built with React, TypeScript, Vite, Tailwind
-CSS, and Framer Motion.
+A production-ready marketing site for J Sync (video production, motion
+graphics, content creation, websites, and workflow automation), built with
+React, TypeScript, Vite, Tailwind CSS, and Framer Motion.
 
 Almost all copy, sample projects, videos, and settings live in a few places:
 
 - [`src/data/content.ts`](src/data/content.ts) — projects, videos, content gallery, automations, and other structural/sample data
-- [`src/data/settings.ts`](src/data/settings.ts) — Calendly URL, social links, résumé path
-- [`src/i18n/translations/`](src/i18n/translations/) — all marketing copy (nav, hero, services, process, about, footer, booking), in 10 languages — see section 7
+- [`src/data/settings.ts`](src/data/settings.ts) — Calendly URL, social links, résumé path, analytics token
+- [`src/i18n/translations/`](src/i18n/translations/) — all marketing copy (nav, hero, services, process, about, footer, booking, FAQ, command palette), in 10 languages — see section 7
 
-You can update most of the site without touching any component code.
+You can update most of the site without touching any component code. For a
+step-by-step list of what real content still needs to be gathered, see
+[`CONTENT-CHECKLIST.md`](CONTENT-CHECKLIST.md).
 
 ---
 
@@ -32,8 +34,8 @@ npm run build
 npm run preview   # optional: preview the production build locally
 ```
 
-`npm run build` runs a full TypeScript check (`tsc -b`) before bundling with Vite,
-so type errors fail the build. Output goes to `dist/`.
+`npm run build` runs a full TypeScript check (`tsc -b`) before bundling with
+Vite, so type errors fail the build. Output goes to `dist/`.
 
 Other scripts:
 
@@ -48,17 +50,16 @@ Edit `src/data/content.ts` → `brand`:
 ```ts
 brand: {
   name: 'J Sync',
-  shortStatement: '...',
   email: 'hello@jsync.co',
 }
 ```
 
 The logo mark is an original inline SVG (a "J" with an orbiting accent dot) in
 [`src/components/ui/Logo.tsx`](src/components/ui/Logo.tsx), paired with the
-`content.brand.name` wordmark. It's used in the header (small, left-aligned)
-and centered at the top of the footer (`size="lg"`). To swap in your own mark,
-replace the `<svg>` contents in `Logo.tsx` — everywhere it's used will update
-automatically.
+`content.brand.name` wordmark. It's used in the header (small, left-aligned),
+centered at the top of the footer (`size="lg"`), and in the dashboard
+sidebar's profile block. To swap in your own mark, replace the `<svg>`
+contents in `Logo.tsx` — everywhere it's used will update automatically.
 
 The favicon is [`public/favicon.svg`](public/favicon.svg) — replace it with your
 own mark (keep it square, simple, and legible at 16–32px).
@@ -77,17 +78,23 @@ Edit the `projects` array in `src/data/content.ts`. Each project:
   cover: { type: 'image', src: '/images/projects/your-cover.jpg', alt: 'Descriptive alt text' },
   summary: 'One sentence summary.',
   servicesProvided: ['...'],
-  description: 'Longer paragraph for the detail modal.',
+  description: 'Longer paragraph for the detail modal and case study page.',
   outcome: 'A real, verified result — or leave as "[Add verified client outcome]".',
   isSample: false,                  // set false once it's a real project
 }
 ```
 
-Leaving `cover.src` empty (`''`) shows a clearly labeled placeholder box instead
-of a broken image — useful while you're still gathering real assets. The first
-six projects populate the homepage's editorial grid; additional projects are
-included in the pool but the grid layout (`LAYOUT` in
-[`SelectedWork.tsx`](src/components/sections/SelectedWork.tsx)) is tuned for six.
+Leaving `cover.src` empty (`''`) shows a clearly labeled placeholder box
+instead of a broken image — useful while you're still gathering real assets.
+The first six projects populate the homepage's editorial grid; additional
+projects are included in the pool but the grid layout (`LAYOUT` in
+[`SelectedWork.tsx`](src/components/sections/SelectedWork.tsx)) is tuned for
+six.
+
+Every project's `id` also becomes a real, shareable, indexable URL at
+`/work/:id` (see [`ProjectDetail.tsx`](src/pages/ProjectDetail.tsx)) — no
+extra config needed. The homepage grid and the quick-preview modal both link
+to it via "View case study".
 
 **Recommended cover image size:** 1600×1200px (4:3) or larger, JPEG/WebP, under ~300KB.
 
@@ -103,7 +110,7 @@ the same `VideoItem` shape — only `source` changes:
   id: 'my-video',
   title: 'My Video',
   client: 'Client Name',
-  category: 'Video Production',
+  category: 'Video Production',   // free-text — e.g. also used for 'Motion Graphics'
   description: '...',
   source: { type: 'local', src: '/videos/my-video.mp4' },
   thumbnail: '/images/videos/my-video-thumb.jpg',
@@ -128,8 +135,9 @@ source: { type: 'vimeo', src: '76979871' }
 
 Either way, the video card shows a thumbnail first; the actual player (native
 `<video>` or a YouTube/Vimeo iframe) is only created once a visitor clicks
-play, so embeds never slow down the initial page load. Add a real `thumbnail`
-image for each — otherwise a placeholder is shown.
+play, so embeds never slow down the initial page load. For YouTube, you can
+skip hosting your own thumbnail and use YouTube's own auto-generated image:
+`https://img.youtube.com/vi/<VIDEO_ID>/maxresdefault.jpg`.
 
 ## 6. Update the "Tools & Technologies" logos (About section)
 
@@ -145,27 +153,27 @@ image for each — otherwise a placeholder is shown.
 
 To add a real logo: drop the SVG/PNG into `public/icons/`, then set
 `logo: '/icons/your-file.svg'` on that tool — the white swatch background in
-`ToolBadge.tsx` keeps any logo legible in both light and dark mode. The
-Premiere Pro, JavaScript, and AWS badges currently use generated letter marks
-rather than the official brand SVGs; swap them to `logo` once you have the
-real files if you'd prefer exact brand marks.
+`ToolBadge.tsx` keeps any logo legible in both light and dark mode. This same
+component is reused in the dashboard's "Daily Drivers" ticker
+([`ToolsTicker.tsx`](src/components/dashboard/ToolsTicker.tsx)), so a change
+here updates both places.
 
 ## 7. Multi-language support
 
 The site ships in 10 languages: English, Spanish, French, German, Dutch,
 Japanese, Korean, Vietnamese, Chinese (Simplified/Mandarin), and Chinese
-(Traditional, Hong Kong/Cantonese register). A globe-icon dropdown in the
-header (with a flag next to each language) lets visitors switch; the choice
-is remembered in `localStorage`, and first-time visitors are matched to a
-supported language from their browser settings automatically, falling back
-to English.
+(Traditional, Hong Kong/Cantonese register). A globe-icon dropdown (in the
+header, and again in the dashboard sidebar) with a flag next to each language
+lets visitors switch; the choice is remembered in `localStorage`, and
+first-time visitors are matched to a supported language from their browser
+settings automatically, falling back to English.
 
 **What's translated vs. what isn't:** navigation, the hero, all section
-headings, Services, Process, About's quotes, the footer, and the booking copy
-are fully translated. The **Selected Work project narratives** and
-**Automation walkthroughs** are intentionally English-only
-for now — that content is still sample/placeholder data pending your real
-project write-ups, so translating it now would just be translating
+headings, Services, Process, About's quotes, the footer, the booking copy,
+the FAQ, and the command palette are fully translated. The **Selected Work
+project narratives** and **Automation walkthroughs** are intentionally
+English-only for now — that content is still sample/placeholder data pending
+your real project write-ups, so translating it now would just be translating
 placeholder text twice. Once you've written the real English versions,
 translating those specific fields is a smaller, more worthwhile follow-up.
 
@@ -175,8 +183,8 @@ translating those specific fields is a smaller, more worthwhile follow-up.
 - `src/i18n/translations/*.ts` — one file per language (English loads eagerly; every other language is code-split and fetched only when selected, so visitors never download translations they don't use)
 - `src/i18n/locales.ts` — the list of supported locales + browser-language matching
 - `src/i18n/I18nContext.tsx` — the `useI18n()` hook (`{ locale, setLocale, t }`) used throughout the components
-- `src/components/ui/Flags.tsx` — original inline SVG flags (simplified geometric illustrations, not traced artwork)
-- `src/components/ui/LanguageSwitcher.tsx` — the header dropdown
+- `src/components/ui/Flags.tsx` — renders flag SVGs from the [`flag-icons`](https://github.com/lipis/flag-icons) set (`public/icons/flags/`)
+- `src/components/ui/LanguageSwitcher.tsx` — the dropdown itself (reused in both the header and the dashboard sidebar); it's portaled to `<body>` and picks its own open direction based on available screen space, since the trigger sits in different corners in each place
 
 **To edit copy in a language:** open its file in `src/i18n/translations/` and
 edit the strings directly — TypeScript will error if you accidentally leave
@@ -197,12 +205,14 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ]
 ```
 
-Icons are original inline SVGs in
-[`src/components/ui/SocialIcons.tsx`](src/components/ui/SocialIcons.tsx) — no
-image files or emoji involved. Every link opens in a new tab with
-`rel="noopener noreferrer"` and has an accessible label.
+Icons are badge SVGs from the [`gauravghongde/social-icons`](https://github.com/gauravghongde/social-icons)
+set (`public/icons/social/`) — each platform ships a black and a white
+variant, and [`SocialIcons.tsx`](src/components/ui/SocialIcons.tsx) swaps
+between them based on the current light/dark theme purely with CSS (no
+re-render needed). Every link opens in a new tab with `rel="noopener
+noreferrer"` and has an accessible label.
 
-## 9. Replace the Calendly URL
+## 9. Booking flow (custom form → Calendly)
 
 Edit `CALENDLY_URL` in `src/data/settings.ts`:
 
@@ -210,11 +220,21 @@ Edit `CALENDLY_URL` in `src/data/settings.ts`:
 export const CALENDLY_URL = 'https://calendly.com/your-real-handle/consultation'
 ```
 
-This single value drives the inline scheduling widget in the Booking section,
-the "Open Calendly directly" backup link, and the `<noscript>` fallback in
-`index.html` (update that link too, since it can't read from `settings.ts`).
-The Calendly script is only loaded once the Booking section scrolls near the
-viewport, and if it fails to load, the backup link stays usable.
+The Booking section ([`Booking.tsx`](src/components/sections/Booking.tsx))
+is a short custom intake form (name, email, service needed, optional notes) —
+**not** an embedded Calendly widget. On submit, it calls Calendly's
+`initPopupWidget` with the form values pre-filled, opening Calendly in a
+popup for the visitor to actually pick a time and authenticate. This avoids
+the sizing/scrolling problems of Calendly's inline embed, and means you get
+the lead's details even if they close the popup before booking.
+
+The Calendly script itself is only loaded once the Booking section scrolls
+near the viewport (`useCalendlyScript` + `useInView`), and if it hasn't
+loaded yet, submitting falls back to opening `CALENDLY_URL` in a new tab.
+There's also a plain "Book Now" link below the form as a manual fallback.
+
+`CALENDLY_URL` also drives the `<noscript>` fallback link in `index.html` —
+update that too, since it can't read from `settings.ts`.
 
 ## 10. Change colors and fonts
 
@@ -240,29 +260,60 @@ Fonts are declared in the same file's `@theme` block (`--font-display`,
 the `<link>` tag's font list and the `--font-*` variables — only load the
 weights you actually use, to keep page weight down.
 
-## 11. Deploy to Vercel or Netlify
+## 11. The dashboard view (`/dashboard`)
 
-**Vercel:**
-```bash
-npm i -g vercel
-vercel
-```
-Framework preset: Vite. Build command: `npm run build`. Output directory: `dist`.
+A second, fully separate layout at `/dashboard` — a sidebar-nav + card-grid
+presentation of the same content, for visitors who'd rather skim than scroll
+a long single page. It shares all the same data and translations as the main
+site; nothing needs to be duplicated. See
+[`src/pages/Dashboard.tsx`](src/pages/Dashboard.tsx) and
+`src/components/dashboard/`. The footer's "Dashboard View" link and the
+dashboard's own "View Full Site" link cross-link the two.
 
-**Netlify:**
-```bash
-npm i -g netlify-cli
-netlify deploy --build
-```
-Build command: `npm run build`. Publish directory: `dist`.
+## 12. Command palette
 
-This is a client-side single-page app with a single real route (`/`) —
-Privacy and Accessibility are popup modals from the footer, not separate
-pages, so there's nothing extra to configure there. Any other path falls
-through to the 404 page; both Vercel and Netlify handle SPA fallback to
-`index.html` automatically for Vite projects.
+Pressing <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>K</kbd>, or clicking the search
+icon in the header, opens a quick-jump palette (
+[`CommandPalette.tsx`](src/components/layout/CommandPalette.tsx)): search
+over every page section plus a few actions (open the dashboard, download the
+CV, open GitHub). It's provided globally via
+`CommandPaletteProvider` in `App.tsx`, following the same context pattern as
+the project modal.
 
-## 12. Recommended image & video dimensions
+## 13. Analytics (optional, off by default)
+
+The site ships with zero analytics or tracking by default. To turn on
+[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) (free,
+cookie-less, no consent banner needed):
+
+1. Create a free Cloudflare account and add your site's URL under Analytics
+   & Logs → Web Analytics (this does **not** require moving your domain's
+   nameservers to Cloudflare).
+2. Paste the token it gives you into `CLOUDFLARE_ANALYTICS_TOKEN` in
+   `src/data/settings.ts`.
+
+`src/utils/analytics.ts` only injects the beacon script if a token is
+present, so nothing is requested in local dev or before you've set one up.
+
+## 14. Deploy to Netlify or Vercel
+
+The repo already includes `netlify.toml` and `vercel.json` with the build
+command and the SPA rewrite rule both platforms need — every path falls back
+to `index.html` so direct loads of `/work/:id` or `/dashboard` don't 404.
+
+**Netlify:** sign in at [app.netlify.com](https://app.netlify.com), "Add new
+site → Import an existing project", pick this repo, and deploy — the build
+settings are read from `netlify.toml` automatically.
+
+**Vercel:** sign in at [vercel.com](https://vercel.com), import the repo,
+framework preset "Vite" — the rewrite rule is read from `vercel.json`
+automatically.
+
+Either way, update the hardcoded domain in `index.html` (canonical URL, Open
+Graph/Twitter URLs, JSON-LD `url`), `public/sitemap.xml`, and
+`public/robots.txt` to match your real deployed URL once you know it.
+
+## 15. Recommended image & video dimensions
 
 | Asset | Recommended size |
 | --- | --- |
@@ -274,32 +325,33 @@ through to the 404 page; both Vercel and Netlify handle SPA fallback to
 | About portrait | 1000×1250 (4:5) |
 | Hero showreel poster | 1920×1080 |
 | Favicon | 64×64 SVG (scales cleanly at any size) |
-| Open Graph / social share image | 1200×630 JPEG, saved as `public/images/og-cover.jpg` |
+| Open Graph / social share image | 1200×630 JPEG, `public/images/og-cover.jpg` |
 
-## 13. Performance recommendations
+## 16. Performance recommendations
 
 - Compress every image (WebP or well-optimized JPEG) before adding it — this
   is the single biggest lever for real-world load time.
 - Keep local videos short and compressed; prefer YouTube/Vimeo for long-form
   content so bandwidth isn't served from your own host.
-- The build already code-splits the 404 page and lazy-initializes the video
-  players and Calendly widget — avoid adding new always-mounted heavy widgets
-  to the homepage.
+- The build already code-splits every secondary route (`/dashboard`,
+  `/work/:id`, the 404 page) and every non-English translation, and
+  lazy-initializes the video players and Calendly widget — avoid adding new
+  always-mounted heavy widgets to the homepage.
 - Only load font weights you use (already trimmed to 4 weights across 2 families).
 - Run `npm run build` and check the printed bundle sizes after big content
   additions; a Lighthouse pass in Chrome DevTools is the fastest way to catch
   regressions before deploying.
 
-## 14. Accessibility considerations
+## 17. Accessibility considerations
 
 - Semantic landmarks (`header`, `nav`, `main`, `footer`) and a heading
   hierarchy that starts at `<h1>` in the hero.
 - A "Skip to content" link appears on keyboard focus.
 - All interactive elements have visible focus states (see `:focus-visible` in
   `index.css`) and are reachable by keyboard, including the project modal,
-  content lightbox, mobile menu, and content filters.
-- Modals (project detail, content lightbox) trap focus, restore focus on
-  close, and close on <kbd>Escape</kbd>.
+  content lightbox, command palette, mobile menu, and content filters.
+- Modals (project detail, content lightbox, command palette, info popups)
+  trap focus, restore focus on close, and close on <kbd>Escape</kbd>.
 - All motion respects `prefers-reduced-motion` — scroll reveals, the loader,
   and decorative animations are skipped or shortened automatically.
 - Every image-standing-in-for-content has descriptive `alt` text once you add
@@ -315,39 +367,23 @@ contact prompt — treat it as a living checklist, not a one-time pass.
 ```
 src/
   components/
-    layout/     Header, Footer, Loader, ScrollProgress, ErrorBoundary
-    sections/   One file per homepage section (Hero, SelectedWork, Services, ...)
-    ui/         Reusable primitives (Button, MediaFrame, SocialIcons, ...)
-  context/      Shared project-modal state (so Services can deep-link to a project)
-  data/         content.ts (all copy/sample data) + settings.ts (Calendly, social, etc.)
-  hooks/        useTheme, useReducedMotion, useActiveSection, useInView, ...
+    dashboard/  Sidebar, tools ticker, and cards for the /dashboard view
+    layout/     Header, Footer, Loader, ScrollProgress, ErrorBoundary, CommandPalette, InfoModal
+    sections/   One file per homepage section (Hero, SelectedWork, Services, FAQ, ...)
+    ui/         Reusable primitives (Button, MediaFrame, SocialIcons, Flags, LanguageSwitcher, ...)
+  context/      ProjectModalContext (project detail popup) + CommandPaletteContext
+  data/         content.ts (all copy/sample data) + settings.ts (Calendly, social, analytics, etc.)
+  hooks/        useTheme, useReducedMotion, useActiveSection, useInView, useFocusTrap, ...
   i18n/         Translations type, one file per language, the useI18n() provider
-  pages/        Home, NotFound (Privacy/Accessibility are footer popups — see layout/InfoModal.tsx)
+  pages/        Home, Dashboard, ProjectDetail, NotFound (Privacy/Accessibility are footer popups — see layout/InfoModal.tsx)
   types/        Shared TypeScript interfaces for content.ts
-  utils/        Small helpers (cn, scrollToHash)
+  utils/        Small helpers (cn, scrollToHash, analytics, contentAspect)
 ```
 
 ## What's still a placeholder
 
 This build ships with clearly labeled sample data so the site is fully
 functional and demonstrable out of the box — nothing here is a fake real
-client, testimonial, or result. Before launch, replace:
-
-- All six sample projects in `src/data/content.ts` (`projects`) — client
-  names are tagged `[Sample Client]`
-- Project, video, and content-gallery cover images (currently empty `src`,
-  shown as labeled placeholder boxes)
-- Video sources (`videos` array — local paths, plus two `REPLACE_YOUTUBE_ID` /
-  `REPLACE_VIMEO_ID` placeholders)
-- `about.portraitSrc` and `about.location`
-- `CALENDLY_URL` in `src/data/settings.ts` (and in `index.html`'s `<noscript>` block)
-- `SOCIAL_LINKS` URLs in `src/data/settings.ts`
-- Premiere Pro / JavaScript / AWS / n8n / Zapier / Slack / GoHighLevel badges
-  in `about.tools` use generated letter marks, not official brand SVGs — see
-  section 6 above to swap in real logos
-- SEO placeholders in `index.html` (`canonical` URL, Open Graph URLs/image,
-  the `jsync.example` domain throughout, and structured data `sameAs` links)
-- `public/images/og-cover.jpg` (referenced by Open Graph/Twitter meta tags —
-  not included by default)
-- `testimonials` in `src/data/content.ts` — leave empty until you have a real,
-  verified quote; the section hides itself automatically when empty
+client, testimonial, or result. See [`CONTENT-CHECKLIST.md`](CONTENT-CHECKLIST.md)
+for the full list of what's left, with step-by-step instructions for
+gathering and swapping in each piece.
