@@ -39,7 +39,7 @@ export const de: Translations = {
     },
     services: {
       label: 'Leistungen',
-      title: 'Vier Wege der Zusammenarbeit.',
+      title: 'Fünf Wege der Zusammenarbeit.',
       description: 'Jede Leistung funktioniert einzeln oder als Teil eines Gesamtsystems.',
     },
     process: {
@@ -71,6 +71,11 @@ export const de: Translations = {
         title: 'Videoproduktion',
         description: 'Video mit klarer Absicht — von Social-Cuts bis zu Markenfilmen.',
         idealFor: 'Unternehmen, die Video brauchen, aber kein eigenes Team haben.',
+      },
+      'motion-graphics': {
+        title: 'Motion Graphics',
+        description: 'Animierte Grafiken, die eine Marke oder eine Idee zum Leben erwecken — von Logo-Animationen bis zu Erklärvideos.',
+        idealFor: 'Unternehmen, die ihre Geschichte visuell erzählen wollen, oder ein Markenzeichen, das sich wirklich bewegt.',
       },
       'content-creation': {
         title: 'Content-Erstellung',

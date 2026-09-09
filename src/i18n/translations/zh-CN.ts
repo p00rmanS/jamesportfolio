@@ -39,7 +39,7 @@ export const zhCN: Translations = {
     },
     services: {
       label: '服务',
-      title: '四种合作方式。',
+      title: '五种合作方式。',
       description: '每项服务既可独立进行，也可整合为一套完整系统。',
     },
     process: {
@@ -71,6 +71,11 @@ export const zhCN: Translations = {
         title: '视频制作',
         description: '每一支视频都有明确目的 — 从社交短视频到品牌宣传片。',
         idealFor: '需要视频内容但没有内部团队的企业。',
+      },
+      'motion-graphics': {
+        title: '动态图形设计',
+        description: '为品牌或创意注入生命的动画图形 — 从动态 Logo 到解说动画。',
+        idealFor: '希望用视觉方式讲述品牌故事，或想要一个真正会动的品牌标志的企业。',
       },
       'content-creation': {
         title: '内容创作',

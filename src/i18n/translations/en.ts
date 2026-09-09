@@ -44,7 +44,7 @@ export const en: Translations = {
     },
     services: {
       label: 'Services',
-      title: 'Four ways to work together.',
+      title: 'Five ways to work together.',
       description: 'Each service stands alone, or combines into one connected system.',
     },
     process: {
@@ -76,6 +76,11 @@ export const en: Translations = {
         title: 'Video Production',
         description: 'Video that looks intentional — from social cuts to brand films.',
         idealFor: 'Businesses that need video without an in-house crew.',
+      },
+      'motion-graphics': {
+        title: 'Motion Graphics',
+        description: 'Animated graphics that bring a brand or an idea to life — from logo stings to explainer animations.',
+        idealFor: 'Businesses that want their story explained visually, or a brand mark that actually moves.',
       },
       'content-creation': {
         title: 'Content Creation',

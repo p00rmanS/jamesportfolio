@@ -39,7 +39,7 @@ export const vi: Translations = {
     },
     services: {
       label: 'Dịch Vụ',
-      title: 'Bốn cách để hợp tác.',
+      title: 'Năm cách để hợp tác.',
       description: 'Mỗi dịch vụ có thể độc lập, hoặc kết hợp thành một hệ thống liền mạch.',
     },
     process: {
@@ -71,6 +71,11 @@ export const vi: Translations = {
         title: 'Sản Xuất Video',
         description: 'Video có chủ đích — từ đoạn cắt ngắn cho mạng xã hội đến phim thương hiệu.',
         idealFor: 'Doanh nghiệp cần video nhưng không có đội ngũ nội bộ.',
+      },
+      'motion-graphics': {
+        title: 'Motion Graphics',
+        description: 'Đồ họa chuyển động thổi hồn vào thương hiệu hoặc ý tưởng — từ hoạt cảnh logo đến video giải thích.',
+        idealFor: 'Doanh nghiệp muốn kể câu chuyện của mình bằng hình ảnh, hoặc một biểu tượng thương hiệu thực sự chuyển động.',
       },
       'content-creation': {
         title: 'Sáng Tạo Nội Dung',

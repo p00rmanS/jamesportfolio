@@ -39,7 +39,7 @@ export const ko: Translations = {
     },
     services: {
       label: '서비스',
-      title: '함께 일하는 네 가지 방법.',
+      title: '함께 일하는 다섯 가지 방법.',
       description: '각 서비스는 단독으로도, 하나의 통합 시스템으로도 작동합니다.',
     },
     process: {
@@ -71,6 +71,11 @@ export const ko: Translations = {
         title: '영상 제작',
         description: '의도가 담긴 영상 — SNS용 짧은 컷부터 브랜드 필름까지.',
         idealFor: '자체 영상팀 없이 영상이 필요한 기업.',
+      },
+      'motion-graphics': {
+        title: '모션 그래픽',
+        description: '브랜드나 아이디어에 생명을 불어넣는 애니메이션 그래픽 — 로고 애니메이션부터 설명 영상까지.',
+        idealFor: '스토리를 시각적으로 전달하고 싶거나, 실제로 움직이는 브랜드 마크를 원하는 기업.',
       },
       'content-creation': {
         title: '콘텐츠 제작',

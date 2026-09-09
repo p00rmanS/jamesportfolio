@@ -39,7 +39,7 @@ export const es: Translations = {
     },
     services: {
       label: 'Servicios',
-      title: 'Cuatro formas de trabajar juntos.',
+      title: 'Cinco formas de trabajar juntos.',
       description: 'Cada servicio funciona por separado, o se combina en un solo sistema conectado.',
     },
     process: {
@@ -71,6 +71,11 @@ export const es: Translations = {
         title: 'Producción de Video',
         description: 'Video con intención — desde cortes para redes hasta piezas de marca.',
         idealFor: 'Empresas que necesitan video sin un equipo interno.',
+      },
+      'motion-graphics': {
+        title: 'Motion Graphics',
+        description: 'Gráficos animados que dan vida a una marca o una idea — desde cortinillas de logo hasta animaciones explicativas.',
+        idealFor: 'Empresas que quieren contar su historia visualmente, o una marca que realmente se mueva.',
       },
       'content-creation': {
         title: 'Creación de Contenido',

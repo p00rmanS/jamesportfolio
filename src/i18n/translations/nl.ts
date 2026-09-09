@@ -39,7 +39,7 @@ export const nl: Translations = {
     },
     services: {
       label: 'Diensten',
-      title: 'Vier manieren om samen te werken.',
+      title: 'Vijf manieren om samen te werken.',
       description: 'Elke dienst werkt op zichzelf, of als onderdeel van één samenhangend systeem.',
     },
     process: {
@@ -71,6 +71,11 @@ export const nl: Translations = {
         title: 'Videoproductie',
         description: 'Video met een duidelijk doel — van social cuts tot merkfilms.',
         idealFor: 'Bedrijven die video nodig hebben zonder eigen team.',
+      },
+      'motion-graphics': {
+        title: 'Motion Graphics',
+        description: 'Geanimeerde graphics die een merk of idee tot leven brengen — van logo-animaties tot uitlegvideo’s.',
+        idealFor: 'Bedrijven die hun verhaal visueel willen vertellen, of een merk dat echt beweegt.',
       },
       'content-creation': {
         title: 'Contentcreatie',

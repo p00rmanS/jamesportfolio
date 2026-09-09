@@ -34,6 +34,7 @@ export interface Translations {
     askAboutService: string
     items: {
       'video-production': { title: string; description: string; idealFor: string }
+      'motion-graphics': { title: string; description: string; idealFor: string }
       'content-creation': { title: string; description: string; idealFor: string }
       'website-development': { title: string; description: string; idealFor: string }
       'workflow-automation': { title: string; description: string; idealFor: string }

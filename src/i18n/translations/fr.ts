@@ -39,7 +39,7 @@ export const fr: Translations = {
     },
     services: {
       label: 'Services',
-      title: 'Quatre façons de collaborer.',
+      title: 'Cinq façons de collaborer.',
       description: 'Chaque service fonctionne seul, ou s’intègre à un système complet.',
     },
     process: {
@@ -71,6 +71,11 @@ export const fr: Translations = {
         title: 'Production Vidéo',
         description: 'Une vidéo pensée avec intention — des formats courts aux films de marque.',
         idealFor: 'Les entreprises qui ont besoin de vidéo sans équipe interne.',
+      },
+      'motion-graphics': {
+        title: 'Motion Design',
+        description: 'Des graphismes animés qui donnent vie à une marque ou à une idée — des stings de logo aux animations explicatives.',
+        idealFor: 'Les entreprises qui veulent raconter leur histoire visuellement, ou un logo qui bouge vraiment.',
       },
       'content-creation': {
         title: 'Création de Contenu',

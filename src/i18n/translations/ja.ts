@@ -39,7 +39,7 @@ export const ja: Translations = {
     },
     services: {
       label: 'サービス',
-      title: '4つの協業スタイル。',
+      title: '5つの協業スタイル。',
       description: '各サービスは単独でも、組み合わせて一つのシステムとしても機能します。',
     },
     process: {
@@ -71,6 +71,11 @@ export const ja: Translations = {
         title: '映像制作',
         description: '意図を持った映像制作 — SNS用の短編からブランドムービーまで。',
         idealFor: '社内に映像チームがなく、映像制作が必要な企業。',
+      },
+      'motion-graphics': {
+        title: 'モーショングラフィックス',
+        description: 'ブランドやアイデアに命を吹き込むアニメーション表現 — ロゴアニメーションから説明動画まで。',
+        idealFor: 'ストーリーを視覚的に伝えたい、または実際に動くブランドマークが欲しい企業。',
       },
       'content-creation': {
         title: 'コンテンツ制作',

@@ -1,4 +1,4 @@
-import { Video, Layers, Globe, Workflow, ArrowRight } from 'lucide-react'
+import { Video, Sparkles, Layers, Globe, Workflow, ArrowRight } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { content } from '@/data/content'
 import { useI18n } from '@/i18n/I18nContext'
@@ -6,7 +6,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/Reveal'
 import { scrollToHash } from '@/utils/scrollTo'
 
-const ICONS: LucideIcon[] = [Video, Layers, Globe, Workflow]
+const ICONS: LucideIcon[] = [Video, Sparkles, Layers, Globe, Workflow]
 
 export function Services() {
   const { services } = content

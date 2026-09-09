@@ -166,6 +166,15 @@ export const content: SiteContent = {
       source: { type: 'local', src: '' },
       thumbnail: '',
     },
+    {
+      id: 'video-motion-graphics-reel',
+      title: 'Motion Graphics — [Add Title]',
+      client: '[Add Client]',
+      category: 'Motion Graphics',
+      description: '[Add description — logo animation, explainer, or kinetic type piece.]',
+      source: { type: 'local', src: '' },
+      thumbnail: '',
+    },
   ],
 
   contentGallery: [
@@ -347,7 +356,11 @@ export const content: SiteContent = {
   services: [
     {
       id: 'video-production',
-      deliverables: ['Filming', 'Editing & color', 'Short-form cutdowns'],
+      deliverables: ['Filming', 'Editing & color', 'Motion graphics', 'Short-form cutdowns'],
+    },
+    {
+      id: 'motion-graphics',
+      deliverables: ['Animated logos & titles', 'Explainer animations', 'Kinetic typography'],
     },
     {
       id: 'content-creation',

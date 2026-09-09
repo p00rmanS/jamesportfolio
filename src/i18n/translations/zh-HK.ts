@@ -42,7 +42,7 @@ export const zhHK: Translations = {
     },
     services: {
       label: '服務',
-      title: '四種合作方式。',
+      title: '五種合作方式。',
       description: '每項服務可以獨立進行，亦都可以整合成一套完整系統。',
     },
     process: {
@@ -74,6 +74,11 @@ export const zhHK: Translations = {
         title: '影片製作',
         description: '每條片都有明確目的 — 由社交平台短片到品牌宣傳片都得。',
         idealFor: '需要影片但冇內部團隊嘅公司。',
+      },
+      'motion-graphics': {
+        title: '動態圖像設計',
+        description: '為品牌或創意注入生命嘅動畫圖像 — 由動態 Logo 到解說動畫都得。',
+        idealFor: '想用視覺方式講好品牌故事,或者想要一個真正識郁嘅品牌標誌嘅企業。',
       },
       'content-creation': {
         title: '內容創作',

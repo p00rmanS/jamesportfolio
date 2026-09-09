@@ -89,7 +89,12 @@ export interface AutomationItem {
   demoVideoSrc?: string
 }
 
-export type ServiceId = 'video-production' | 'content-creation' | 'website-development' | 'workflow-automation'
+export type ServiceId =
+  | 'video-production'
+  | 'motion-graphics'
+  | 'content-creation'
+  | 'website-development'
+  | 'workflow-automation'
 
 /** Title/description/idealFor live in src/i18n/translations/*.ts, keyed by `id`. */
 export interface Service {
