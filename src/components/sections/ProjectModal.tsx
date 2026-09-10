@@ -108,18 +108,25 @@ export function ProjectModal({ project, onClose, onPrev, onNext }: ProjectModalP
                     </li>
                   ))}
                 </ul>
-                <Button
-                  href="#booking"
-                  variant="secondary"
-                  className="mt-8 w-full"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    onClose()
-                    scrollToHash('#booking')
-                  }}
-                >
-                  Discuss a similar project
-                </Button>
+                <div className="mt-8 space-y-3">
+                  {project.liveUrl && (
+                    <Button href={project.liveUrl} target="_blank" rel="noopener noreferrer" variant="primary" className="w-full">
+                      View Live Site
+                    </Button>
+                  )}
+                  <Button
+                    href="#booking"
+                    variant="secondary"
+                    className="w-full"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      onClose()
+                      scrollToHash('#booking')
+                    }}
+                  >
+                    Discuss a similar project
+                  </Button>
+                </div>
               </div>
             </div>
 

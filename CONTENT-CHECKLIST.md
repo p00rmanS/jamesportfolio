@@ -11,6 +11,30 @@ priority. Skip around freely.
 
 ---
 
+## 0. Deploy Giovanni's Shrimp Truck (client demo — do this first)
+
+**Status:** Giovanni's Shrimp Truck is now a real Selected Work case study
+on your site, linking to `https://giovanni-shrimp-truck.netlify.app` — but
+that site isn't actually live yet. The repo
+([p00rmanS/giovanni-foodtruck](https://github.com/p00rmanS/giovanni-foodtruck))
+already has a `netlify.toml` ready to go.
+
+**Steps:**
+1. In the same Netlify account you used for your own portfolio, click **Add
+   new site → Import an existing project → GitHub** → select
+   `p00rmanS/giovanni-foodtruck`. Deploy — no settings to change.
+2. Site settings → General → "Change site name" → set it to exactly
+   `giovanni-shrimp-truck` so the URL matches what's already in your
+   portfolio (`giovanni-shrimp-truck.netlify.app`). If that name's taken,
+   send Claude whatever URL you actually get — it's a one-line fix in
+   `src/data/content.ts` (`liveUrl` on the `giovanni-shrimp-truck-redesign`
+   project).
+3. Once it's live, click through it yourself once — the "View Live Site"
+   button in your portfolio's Work section and case study page both point
+   here.
+
+---
+
 ## 1. Content Showcase — 8 images (fastest win)
 
 **Where it shows:** homepage, "Content Showcase" section, filterable by
@@ -185,4 +209,6 @@ account.
 Social links, résumé, founder photo, tool logos, real flags, the PCC welcome
 video, the Motion Graphics service, the FAQ section, the command palette
 (Ctrl/Cmd+K), per-project case study pages, and the real Open Graph share
-image are all live.
+image are all live. Giovanni's Shrimp Truck is added as a real Selected Work
+project (cover image, description, "View Live Site" button) — only the
+actual Netlify deploy for that repo is still pending, see item 0 above.

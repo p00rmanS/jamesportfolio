@@ -45,6 +45,8 @@ export interface Project {
   description: string
   outcome: string
   isSample: boolean
+  /** Live deployed URL, if this project has one — shows a "View Live Site" link. */
+  liveUrl?: string
 }
 
 export interface VideoSource {

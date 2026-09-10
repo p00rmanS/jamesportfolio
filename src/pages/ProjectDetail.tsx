@@ -76,12 +76,24 @@ export function ProjectDetail() {
               </li>
             ))}
           </ul>
-          <Link
-            to="/#booking"
-            className="mt-8 flex w-full items-center justify-center border border-line px-5 py-3.5 font-sans text-sm text-ink transition-colors hover:border-accent hover:text-accent"
-          >
-            Discuss a similar project
-          </Link>
+          <div className="mt-8 space-y-3">
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center border border-ink px-5 py-3.5 font-sans text-sm text-ink transition-colors hover:bg-ink hover:text-paper"
+              >
+                View Live Site
+              </a>
+            )}
+            <Link
+              to="/#booking"
+              className="flex w-full items-center justify-center border border-line px-5 py-3.5 font-sans text-sm text-ink transition-colors hover:border-accent hover:text-accent"
+            >
+              Discuss a similar project
+            </Link>
+          </div>
         </Reveal>
       </div>
     </main>
